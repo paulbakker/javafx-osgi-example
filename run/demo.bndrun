@@ -1,0 +1,19 @@
+-runfw: org.apache.felix.framework;version='[4,5)'
+-runee: JavaSE-1.8
+-runsystemcapabilities: ${native_capability}
+
+-resolve.effective: active;skip:="osgi.service"
+-runbundles: \
+	javafx.launcher;version=latest,\
+	org.apache.felix.dependencymanager,\
+	org.apache.felix.dependencymanager.runtime,\
+	org.apache.felix.dependencymanager.shell,\
+	org.apache.felix.metatype,\
+	org.apache.felix.eventadmin,\
+	org.apache.felix.configadmin,\
+	org.apache.felix.log,\
+	org.apache.felix.gogo.command,\
+	org.apache.felix.gogo.runtime,\
+	org.apache.felix.gogo.shell,\
+	example.javafx.ui;version=latest
+-runsystempackages: javafx.application,javafx.scene,javafx.stage,javafx.scene.layout,javafx.event,javafx.collections,javafx.scene.control

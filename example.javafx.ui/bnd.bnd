@@ -1,0 +1,7 @@
+Bundle-Version: 0.0.0.${tstamp}
+-buildpath: \
+	../cnf/plugins/org.apache.felix.dependencymanager.annotation-3.2.0.jar;version=file,\
+	org.apache.felix.dependencymanager,\
+	osgi.core,\
+	javafx.launcher;version=latest
+Private-Package: org.amdatu.javafx.ui
