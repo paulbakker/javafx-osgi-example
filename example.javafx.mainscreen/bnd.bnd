@@ -2,6 +2,6 @@ Bundle-Version: 0.0.0.${tstamp}
 -buildpath: \
 	../cnf/plugins/org.apache.felix.dependencymanager.annotation-3.2.0.jar;version=file,\
 	org.apache.felix.dependencymanager,\
-	osgi.core;version=5.0
-Private-Package: javafxtest
-Export-Package: org.amdatu.javafx
+	osgi.core,\
+	example.javafx.ui;version=latest
+Private-Package: example.javafx.mainscreen

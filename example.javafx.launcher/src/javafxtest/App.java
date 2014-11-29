@@ -6,13 +6,14 @@ import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.stage.Stage;
 
-import org.amdatu.javafx.StageService;
 import org.apache.felix.dm.DependencyManager;
 import org.apache.felix.dm.annotation.api.Component;
 import org.apache.felix.dm.annotation.api.Start;
 import org.apache.felix.dm.annotation.api.Stop;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.FrameworkUtil;
+
+import example.javafx.launcher.StageService;
 
 @Component
 public class App extends Application {

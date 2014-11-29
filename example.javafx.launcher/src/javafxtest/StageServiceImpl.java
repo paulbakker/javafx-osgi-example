@@ -1,7 +1,6 @@
 package javafxtest;
 
-import org.amdatu.javafx.StageService;
-
+import example.javafx.launcher.StageService;
 import javafx.stage.Stage;
 
 public class StageServiceImpl implements StageService{

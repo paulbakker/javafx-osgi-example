@@ -1,4 +1,4 @@
-package org.amdatu.javafx;
+package example.javafx.launcher;
 
 import javafx.stage.Stage;
 
