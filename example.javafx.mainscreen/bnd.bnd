@@ -4,4 +4,10 @@ Bundle-Version: 0.0.0.${tstamp}
 	org.apache.felix.dependencymanager,\
 	osgi.core,\
 	example.javafx.ui;version=latest
+Bundle-Version: 0.0.0.${tstamp}
+-buildpath: \
+	../cnf/plugins/org.apache.felix.dependencymanager.annotation-3.2.0.jar;version=file,\
+	org.apache.felix.dependencymanager,\
+	osgi.core,\
+	example.javafx.ui;version=latest
 Private-Package: example.javafx.mainscreen

@@ -21,15 +21,11 @@ public class App extends Application {
 	@Start
 	public void startBundle() {
 
-		Executors
-				.defaultThreadFactory()
-				.newThread(
-						() -> {
-							Thread.currentThread().setContextClassLoader(
-									this.getClass().getClassLoader());
-							launch();
-						}).start();
-
+		Executors.defaultThreadFactory().newThread(() -> {
+				Thread.currentThread().setContextClassLoader(
+						this.getClass().getClassLoader());
+				launch();
+			}).start();
 	}
 
 	@Override

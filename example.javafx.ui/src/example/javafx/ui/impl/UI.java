@@ -8,8 +8,6 @@ import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.stage.Stage;
 
 import org.apache.felix.dm.annotation.api.Component;
@@ -34,32 +32,33 @@ public class UI {
 		Platform.runLater(() -> {
 
 			Stage primaryStage = m_stageService.getStage();
-			primaryStage.setTitle("Hello World!");
+			primaryStage.setTitle("Tabs example!");
 			tabPane = new TabPane();
 
-			screens.values().forEach(s -> {
-				Tab tab = new Tab(s.getName());
-				tab.setContent(new Rectangle(200, 200, Color.LIGHTSTEELBLUE));
-
-				tabPane.getTabs().add(tab);
-			});
+			screens.values().forEach(this::createTab);
 
 			primaryStage.setScene(new Scene(tabPane, 300, 250));
 			primaryStage.show();
 
 		});
+	}
 
-		System.out.println("Shown");
+	private void createTab(AppScreen s) {
+		Tab tab = new Tab(s.getName());
+		tab.setContent(s.getContent());
+		if(s.getPosition() < tabPane.getTabs().size()) {
+			tabPane.getTabs().add(s.getPosition(), tab);
+		} else {
+			tabPane.getTabs().add(tab);
+		}
+		tabPane.getSelectionModel().select(tabPane.getTabs().size()-1);
 	}
 
 	@ServiceDependency(removed = "removeScreen")
 	public void addScreen(ServiceReference sr, AppScreen screen) {
 		if (tabPane != null) {
 			Platform.runLater(() -> {
-				Tab tab = new Tab(screen.getName());
-				tab.setContent(new Rectangle(200, 200, Color.LIGHTSTEELBLUE));
-
-				tabPane.getTabs().add(tab);
+				createTab(screen);
 			});
 		}
 
